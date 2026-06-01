@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>빌리언즈 다이어리 (Billiards Diary)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>BILLIARDS DIARY</h1>
+            <p>나의 당구 에버리지 및 경기 기록장</p>
+        </header>
+
+        <main class="container">
+            
+            <section class="left-pane">
+                <div class="card dashboard">
+                    <h2>TOTAL STATS</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-label">총 경기수</span>
+                            <span id="stat-total-games" class="stat-value">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">승률</span>
+                            <span id="stat-win-rate" class="stat-value">0%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">통산 에버리지</span>
+                            <span id="stat-avg-avg" class="stat-value">0.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card record-form">
+                    <h2>RECORD NEW GAME</h2>
+                    <form id="game-form">
+                        <div class="form-group">
+                            <label for="game-type">게임 종류</label>
+                            <select id="game-type" required>
+                                <option value="3구(대대)">3구 (대대)</option>
+                                <option value="3구(중대)">3구 (중대)</option>
+                                <option value="4구">4구</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="my-score">내 점수</label>
+                                <input type="number" id="my-score" min="0" required placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="opp-score">상대 점수</label>
+                                <input type="number" id="opp-score" min="0" required placeholder="0">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="innings">총 이닝 수</label>
+                                <input type="number" id="innings" min="1" required placeholder="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="match-result">경기 결과</label>
+                                <select id="match-result" required>
+                                    <option value="승">승리 (WIN)</option>
+                                    <option value="패">패배 (LOSE)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-submit">경기 기록 저장</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="right-pane">
+                <div class="card history-card">
+                    <h2>GAME HISTORY</h2>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>날짜</th>
+                                    <th>종목</th>
+                                    <th>결과</th>
+                                    <th>스코어 (내점수 : 상대)</th>
+                                    <th>이닝</th>
+                                    <th>단일 에버</th>
+                                    <th>관리</th>
+                                </tr>
+                            </thead>
+                            <tbody id="history-table-body">
+                                </tbody>
+                        </table>
+                        <div id="no-data-msg" class="no-data">기록된 경기 내용이 없습니다. 첫 경기를 기록해 보세요!</div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
