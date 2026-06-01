@@ -1,0 +1,224 @@
+/* 기본 리셋 및 폰트 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #222222;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+#app {
+    width: 100%;
+    max-width: 1280px; /* PC 최적화 최대 가로폭 */
+}
+
+/* 헤더 디자인 */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #222;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #111;
+}
+
+header p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* 메인 컨텐츠 레이아웃 (PC Grid) */
+.container {
+    display: grid;
+    grid-template-columns: 450px 1fr; /* 좌측 입력폼 고정, 우측 히스토리 유연하게 */
+    gap: 30px;
+    align-items: start;
+}
+
+/* 공통 카드 스타일 (무채색 미니멀) */
+.card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 0px; /* 각진 그리드 스타일로 시크함 강조 */
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.card h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #111;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+/* 대시보드 통계 수치 */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    text-align: center;
+}
+
+.stat-item {
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    padding: 15px 10px;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #111;
+}
+
+/* 입력 폼 스타일 */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+select, input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 0.95rem;
+    color: #222;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+select:focus, input:focus {
+    border-color: #111;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #333;
+}
+
+/* 우측 경기 히스토리 테이블 스타일 */
+.history-card {
+    min-height: 545px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+th, td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #fafafa;
+    font-weight: 600;
+    color: #555;
+    border-bottom: 2px solid #ddd;
+}
+
+tr:hover td {
+    background-color: #fcfcfc;
+}
+
+/* 승/패 태그 스타일 트렌디하게 변경 */
+.badge {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.badge.win {
+    background-color: #111;
+    color: #fff;
+}
+
+.badge.lose {
+    background-color: #eee;
+    color: #666;
+    border: 1px solid #ccc;
+}
+
+/* 삭제 버튼 */
+.btn-delete {
+    background: none;
+    border: 1px solid #ccc;
+    color: #888;
+    padding: 3px 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+}
+
+.btn-delete:hover {
+    border-color: #111;
+    color: #111;
+    background-color: #f5f5f5;
+}
+
+/* 데이터 없음 알림 */
+.no-data {
+    text-align: center;
+    color: #999;
+    padding: 60px 0;
+    font-size: 0.95rem;
+}
